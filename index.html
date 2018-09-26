@@ -17,9 +17,15 @@
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/orbit-2.css">
+    <span id="date_time"></span>
+            <script type="text/javascript">window.onload = date_time('date_time');</script>
+            
+    <script type="text/javascript" src="assets/css/contact.js"></script>
+   
 </head> 
 
-<body>
+<body onload="digitized();">
+   
     <div class="wrapper">
         <div class="sidebar-wrapper">
             <div class="profile-container">
@@ -37,6 +43,8 @@
                     <li class="github"><i class="fab fa-github"></i><a href="#" target="_blank">github.com/zarfishanwajid</a></li>
                     
                 </ul>
+
+                
             </div><!--//contact-container-->
             <div class="education-container container-block">
                 <h2 class="container-block-title">Education</h2>
@@ -70,7 +78,59 @@
 					<li>Travelling</li>
                 </ul>
             </div><!--//interests-->
-            
+            <div style="background-color:#F3F3F3;
+            max-width:220px;width:100%;margin:0 auto;padding:20px;">
+    
+            <table class="tabBlock" align="center" cellspacing="0" cellpadding="0" border="0">
+                <tr><td class="clock" id="dc"></td>  <!-- THE DIGITAL CLOCK. -->
+                    <td>
+                        <table cellpadding="0" cellspacing="0" border="0">
+                        
+                            <!-- HOUR IN 'AM' AND 'PM'. -->
+                            <tr><td class="clocklg" id="dc_hour"></td></tr>
+    
+                            <!-- SHOWING SECONDS. -->
+                            <tr><td class="clocklg" id="dc_second"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    
+    <script>
+        // OUR FUNCTION WHICH IS EXECUTED ON LOAD OF THE PAGE.
+        function digitized() {
+            var dt = new Date();    // DATE() CONSTRUCTOR FOR CURRENT SYSTEM DATE AND TIME.
+            var hrs = dt.getHours();
+            var min = dt.getMinutes();
+            var sec = dt.getSeconds();
+    
+            min = Ticking(min);
+            sec = Ticking(sec);
+    
+            document.getElementById('dc').innerHTML = hrs + ":" + min;
+            document.getElementById('dc_second').innerHTML = sec;
+    
+            if (hrs > 12) { 
+                document.getElementById('dc_hour').innerHTML = 'PM'; 
+            }
+            else { 
+                document.getElementById('dc_hour').innerHTML = 'AM'; 
+            }
+    
+            // CALL THE FUNCTION EVERY 1 SECOND (RECURSION).
+            var time
+            time = setInterval('digitized()', 1000);
+        }
+    
+    function Ticking(ticVal) {
+        if (ticVal < 10) {
+            ticVal = "0" + ticVal;
+        }
+        return ticVal;
+    }
+    </script>
         </div><!--//sidebar-wrapper-->
         
         <div class="main-wrapper">
@@ -203,11 +263,38 @@
                     
                     
                 </div>  
-            </section><!--//skills-section-->
+            </section>
+
+
             
-        </div><!--//main-body-->
-    </div>
- 
+            <h3>Contact Form</h3>
+
+            <form action="" method="post"> <!-- Form Starts From Here -->
+                <label>Full Name:</label>
+                <input id='firstname' type='text'>
+                <p id="p1"></p> <!--This Segment Displays The Validation Rule For Name-->
+               
+                <label>Email:</label>
+                <input id='email' type='text'>
+                <p id="p2"></p> <!-- This Segment Displays The Validation Rule For Email -->
+                <label>State:</label>
+                <select id='state'>
+                <option>Please Choose</option>
+                <option>America</option>
+                <option>Australia</option>
+                <option>Sweden</option>
+                <option>Africa</option>
+                <option>Pakistan</option>
+                </select>
+                <p id="p3"></p> <!-- This Segment Displays The Validation Rule For Selection -->
+                <label>Message:</label>
+                <input id='msg' type='text'>
+                <p id="p4"></p>
+              
+                
+                <button id="submit">Submit</button>
+                </form>
+              
     <footer class="footer">
         <div class="text-center">
                 <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other commercial license options via our website: themes.3rdwavemedia.com */-->

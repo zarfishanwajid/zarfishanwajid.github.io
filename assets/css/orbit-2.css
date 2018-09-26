@@ -27,7 +27,69 @@ a {
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
 }
-
+#submit {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #35776d;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid #35776d; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+.tabBlock
+{
+    background-color:#35776d;
+    border:solid 0px rgb(79, 229, 255);
+    border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
+    max-width:200px;
+    width:100%;
+    overflow:hidden;
+    display:block;
+}
+.clock
+{
+    vertical-align:middle;
+    font-family:Orbitron;
+    font-size:40px;
+    font-weight:normal;
+    color:#FFF;
+    padding:0 10px;
+}
+.clocklg 
+{
+    vertical-align:middle; 
+    font-family:Orbitron;
+    font-size:20px;
+    font-weight:normal;
+    color:#FFF;
+}
+#firstname {
+  margin-left:10px
+  }
+  
+  #email {
+  margin-left:10px
+  }
+  #state {
+  margin-left:10px;
+  margin-top:10px
+  }
+  #msg {
+  margin-left:10px
+  }
 a:hover {
   text-decoration: underline;
   color: #1d423c;
@@ -329,6 +391,9 @@ p {
     margin-bottom: 0;
   }
 }
+
+  
+ 
 
 @media (min-width: 992px) {
   .skillset .level-title {
